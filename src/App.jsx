@@ -5,9 +5,9 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
-function App() {
+export default function App() {
   return (
-    <div className="scroll-smooth bg-gray-50 text-gray-900">
+    <div>
       <Navbar />
       <Hero />
       <About />
@@ -17,5 +17,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
