@@ -1,40 +1,48 @@
+import { motion } from "framer-motion";
+
 const projects = [
   {
-    title: "Market-Neutral Strategy Simulator",
-    description: "Developed a multi-strategy market-neutral model with trend-following overlays (~7% simulated annual returns).",
-    link: "https://github.com/eyt44"
+    title: "Systematic Trading Simulator",
+    desc: "Built a backtesting framework to evaluate mean-reversion and momentum signals across equities.",
+    link: "#"
   },
   {
-    title: "ASL Fingerspelling Neural Network",
-    description: "Built an image recognition model to classify American Sign Language fingerspelling gestures.",
-    link: "https://github.com/eyt44"
-  },
-  {
-    title: "Heart Disease ML Predictor",
-    description: "Trained supervised learning models to predict heart disease likelihood using health metrics.",
-    link: "https://github.com/eyt44"
-  },
-  {
-    title: "Web Apps & Games",
-    description: "Created multiple interactive web apps, including quizzes, ciphers, and chat-based interfaces.",
-    link: "https://github.com/eyt44"
+    title: "AI-Driven Market Regime Classifier",
+    desc: "Used clustering + RL to detect market regimes and adapt trading actions dynamically.",
+    link: "#"
   },
 ];
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 bg-black text-white px-6 max-w-6xl mx-auto">
-      <h2 className="text-3xl font-bold text-cyan-400 mb-10">Projects</h2>
+    <section id="projects" className="py-32 px-6 max-w-4xl mx-auto">
+      <motion.h2
+        className="text-3xl font-bold text-white mb-10"
+        initial={{ opacity: 0, x: -10 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+      >
+        Projects
+      </motion.h2>
 
-      <div className="grid md:grid-cols-2 gap-8">
+      <div className="grid sm:grid-cols-2 gap-8">
         {projects.map((project, i) => (
-          <div key={i} className="border border-cyan-400/30 rounded-xl p-6 bg-gray-900 hover:border-cyan-400 transition">
-            <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-            <p className="text-gray-300 mb-4">{project.description}</p>
-            <a href={project.link} target="_blank" className="text-cyan-400 hover:underline">
+          <motion.div
+            key={i}
+            className="bg-panel p-6 rounded-lg border border-neutral-800 hover:border-primary transition"
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-xl font-semibold text-white mb-2">{project.title}</h3>
+            <p className="text-neutral-300 mb-4">{project.desc}</p>
+            <a
+              href={project.link}
+              className="text-primary font-medium hover:underline"
+            >
               View Project →
             </a>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

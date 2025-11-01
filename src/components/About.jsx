@@ -1,17 +1,30 @@
+import { motion } from "framer-motion";
+
 export default function About() {
   return (
-    <section id="about" className="py-24 bg-black text-white px-6 max-w-4xl mx-auto">
-      <h2 className="text-3xl font-bold mb-6 text-cyan-400">About Me</h2>
+    <section id="about" className="py-32 px-6 max-w-4xl mx-auto">
+      <motion.h2
+        className="text-3xl font-bold text-white mb-6"
+        initial={{ opacity: 0, x: -10 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+      >
+        About
+      </motion.h2>
 
-      <p className="text-gray-300 leading-relaxed mb-4">
-        I'm a Computer Science and Mathematics student at Yale University interested in quantitative finance, 
-        algorithmic trading, and applied machine learning.
-      </p>
-
-      <p className="text-gray-300 leading-relaxed">
-        I love solving complex problems, developing thoughtful interfaces, and bringing ideas to life through code.
-        Outside academics, I enjoy soccer, cello, ultimate frisbee, and exploring the outdoors.
-      </p>
+      <motion.p
+        className="text-neutral-300 leading-relaxed text-lg"
+        initial={{ opacity: 0, y: 15 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+      >
+        I'm <span className="text-primary font-semibold">Emily Tian</span>, a developer and
+        quantitative thinker focused on systematic trading, applied ML, and financial systems.
+        I love bringing together{" "}
+        <span className="text-accent font-semibold">math, research, and engineering</span>{" "}
+        to solve complex computational challenges — from algorithmic trading models to AI-driven
+        simulations and real-time systems.
+      </motion.p>
     </section>
   );
 }
