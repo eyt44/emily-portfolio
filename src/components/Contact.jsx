@@ -37,8 +37,8 @@ export default function Contact() {
         email me
       </a>
 
-      {/* Social Links */}
-      <div className="flex gap-6 text-sm justify-center mt-6 text-forest">
+      {/* Social Links under button */}
+      <div className="flex items-center gap-3 mt-3 text-sm text-forest">
 
         <a 
           href="https://github.com/eyt44" 
@@ -48,8 +48,10 @@ export default function Contact() {
           github ↗
         </a>
 
+        <span className="text-gray-400">·</span>
+
         <a 
-          href="https://www.linkedin.com/in/emily-t-338503318/" 
+          href="https://www.linkedin.com/in/emily-t-338503318/"
           target="_blank"
           className="link-underline hover:opacity-70"
         >
