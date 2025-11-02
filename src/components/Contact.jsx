@@ -14,8 +14,7 @@ const Contact = () => {
     const isGmailUser =
       ua.includes("Chrome") ||
       ua.includes("CriOS") ||
-      ua.includes("Gmail") ||
-      ua.includes("Android");
+      ua.includes("Gmail");
 
     setEmailLink(isGmailUser ? gmailURL : mailtoURL);
   }, []);
