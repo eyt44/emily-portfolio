@@ -30,9 +30,12 @@ export default function Contact() {
         Always happy to chat about anything.
       </p>
 
+      {/* Email Button */}
       <a
         href={emailLink}
-        className="border border-forest text-forest px-6 py-3 rounded hover:bg-forest hover:text-white transition inline-block"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="border border-forest text-forest px-5 py-2 rounded hover:bg-forest hover:text-white transition inline-block"
       >
         email me
       </a>
