@@ -23,9 +23,9 @@ export default function Projects() {
             <a
               href="https://prime-defense-game-30qg576pp-emily-tians-projects.vercel.app/"
               target="_blank"
-              className="underline underline-offset-2 hover:opacity-70"
+              className="text-forest link-underline hover:opacity-70"
             >
-              play →
+              play ↗
             </a>
 
             <span className="text-gray-400">·</span>
@@ -33,10 +33,11 @@ export default function Projects() {
             <a
               href="https://github.com/eyt44/prime-defense-game"
               target="_blank"
-              className="underline underline-offset-2 hover:opacity-70"
+              className="text-forest link-underline hover:opacity-70"
             >
-              github →
+              github ↗
             </a>
+
           </div>
         </div>
 
@@ -51,9 +52,9 @@ export default function Projects() {
             <a
               href="https://emily-portfolio-teal.vercel.app/"
               target="_blank"
-              className="underline underline-offset-2 hover:opacity-70"
+              className="text-forest link-underline hover:opacity-70"
             >
-              view →
+              view ↗
             </a>
 
             <span className="text-gray-400">·</span>
@@ -61,10 +62,11 @@ export default function Projects() {
             <a
               href="https://github.com/eyt44/emily-portfolio"
               target="_blank"
-              className="underline underline-offset-2 hover:opacity-70"
+              className="text-forest link-underline hover:opacity-70"
             >
-              github →
+              github ↗
             </a>
+
           </div>
         </div>
 
