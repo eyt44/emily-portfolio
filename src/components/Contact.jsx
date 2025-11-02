@@ -1,9 +1,30 @@
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const Contact = () => {
+  const [emailLink, setEmailLink] = useState("");
+
+  useEffect(() => {
+    const myEmail = "e.tian@yale.edu"; // 👉 replace with your Yale email
+    const gmailURL = `https://mail.google.com/mail/?view=cm&fs=1&to=${emailLink}`;
+    const mailtoURL = `mailto:${myEmail}`;
+
+    // Detect Chrome / Gmail / Android clients
+    const ua = navigator.userAgent;
+    const isGmailUser =
+      ua.includes("Chrome") ||
+      ua.includes("CriOS") || // Chrome iOS
+      ua.includes("Gmail") ||
+      ua.includes("Android");
+
+    setEmailLink(isGmailUser ? gmailURL : mailtoURL);
+  }, []);
+
   return (
-    <section id="contact" className="h-screen flex items-center justify-center px-6">
+    <section id="contact" className="min-h-screen flex items-center justify-center px-6 py-20">
       <div className="text-center max-w-xl">
+        
+        {/* Title */}
         <motion.h2
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
@@ -14,6 +35,7 @@ const Contact = () => {
           Let's Connect
         </motion.h2>
 
+        {/* Subtitle */}
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -24,47 +46,35 @@ const Contact = () => {
           Always happy to chat about quant, trading, tech, or anything interesting.
         </motion.p>
 
-        {/* BUTTONS */}
-        <div className="flex flex-col items-center gap-4">
+        {/* Primary Email Button */}
+        <motion.a
+          href={emailLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-7 py-3 bg-primary text-black font-semibold rounded-md shadow hover:bg-primary/80 transition inline-block"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.98 }}
+        >
+          Email Me
+        </motion.a>
 
-          {/* Main email button */}
-          <motion.a
-            href="mailto:e.tian@yale.edu"
-            className="px-6 py-3 bg-primary text-black font-semibold rounded-md shadow hover:bg-primary/80 transition inline-block"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.98 }}
+        {/* Social Links */}
+        <div className="flex gap-8 text-lg mt-6 justify-center">
+          <a 
+            href="https://github.com/eyt44" 
+            target="_blank" 
+            className="hover:text-primary transition"
           >
-            Email Me
-          </motion.a>
-
-          {/* Gmail fallback */}
-          <a
-            href="https://mail.google.com/mail/?view=cm&fs=1&to=e.tian@yale.edu"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-primary text-sm hover:underline"
-          >
-            Or message me via Gmail →
+            GitHub
           </a>
 
-          {/* Social Links */}
-          <div className="flex gap-8 text-lg mt-4">
-            <a
-              href="https://github.com/eyt44"
-              target="_blank"
-              className="hover:text-primary transition"
-            >
-              GitHub
-            </a>
-
-            <a
-              href="https://www.linkedin.com/in/emily-t-338503318/"
-              target="_blank"
-              className="hover:text-primary transition"
-            >
-              LinkedIn
-            </a>
-          </div>
+          <a 
+            href="https://www.linkedin.com/in/emily-t-338503318/" // 👉 replace with your LinkedIn
+            target="_blank" 
+            className="hover:text-primary transition"
+          >
+            LinkedIn
+          </a>
         </div>
       </div>
     </section>
