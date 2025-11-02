@@ -2,16 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "@fontsource/inter/400.css";
-@import "@fontsource/inter/600.css";
-@import "@fontsource/inter/700.css";
+/* Fade-in animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity .6s ease, transform .6s ease;
+}
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-:root {
-  --primary: #00f29e; /* quant neon green */
-  --accent: #c2a878;  /* muted gold */
-  --panel: rgba(10, 14, 19, 0.8);
+html {
+  scroll-behavior: smooth;
 }

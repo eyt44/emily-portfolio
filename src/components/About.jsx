@@ -1,30 +1,18 @@
-import { motion } from "framer-motion";
+import useReveal from "../hooks/useReveal";
 
 export default function About() {
-  return (
-    <section id="about" className="py-32 px-6 max-w-4xl mx-auto">
-      <motion.h2
-        className="text-3xl font-bold text-white mb-6"
-        initial={{ opacity: 0, x: -10 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-      >
-        About
-      </motion.h2>
+  useReveal();
 
-      <motion.p
-        className="text-neutral-300 leading-relaxed text-lg"
-        initial={{ opacity: 0, y: 15 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-      >
-        I'm <span className="text-primary font-semibold">Emily Tian</span>, a developer and
-        quantitative thinker focused on systematic trading, applied ML, and financial systems.
-        I love bringing together{" "}
-        <span className="text-accent font-semibold">math, research, and engineering</span>{" "}
-        to solve complex computational challenges — from algorithmic trading models to AI-driven
-        simulations and real-time systems.
-      </motion.p>
+  return (
+    <section id="about" className="min-h-screen px-6 py-24 reveal">
+      <h2 className="text-4xl font-bold text-forest mb-6">about</h2>
+
+      <p className="text-gray-800 max-w-3xl leading-relaxed">
+        I'm a first-year at Yale studying mathematics and computer science and their 
+        applications in the real-world. When I'm not debugging or losing track of time 
+        in a math problem, you can find me working out, playing the cello, exploring 
+        the great outdoors, trying new foods, or learning something new (ultimate frisbee!).
+      </p>
     </section>
   );
 }

@@ -1,22 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./index.html", "./src/**/*.{js,jsx}"],
+  content: [
+    "./index.html",
+    "./src/**/*.{js,jsx,ts,tsx}",
+  ],
   theme: {
     extend: {
-      fontFamily: {
-        sans: ["Inter", "sans-serif"],
-      },
       colors: {
-        primary: "var(--primary)",
-        accent: "var(--accent)",
-      },
-      backgroundColor: {
-        panel: "var(--panel)",
-      },
-      backdropBlur: {
-        xs: "2px",
+        forest: "#0d4d26",
       },
     },
   },
   plugins: [],
-}
+};

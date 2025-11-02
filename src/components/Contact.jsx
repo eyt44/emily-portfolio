@@ -1,80 +1,58 @@
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import useReveal from "../hooks/useReveal";
 
-const Contact = () => {
+export default function Contact() {
+  useReveal();
+
   const [emailLink, setEmailLink] = useState("");
 
   useEffect(() => {
-    const myEmail = "e.tian@yale.edu"; // ✅ your real email
-    const gmailURL = `https://mail.google.com/mail/?view=cm&fs=1&to=${myEmail}`;
-    const mailtoURL = `mailto:${myEmail}`;
+    const email = "e.tian@yale.edu";
+    const isGmail =
+      navigator.userAgent.includes("Chrome") ||
+      navigator.userAgent.includes("Gmail");
 
-    // Detect Chrome / Gmail / Android clients
-    const ua = navigator.userAgent;
-    const isGmailUser =
-      ua.includes("Chrome") ||
-      ua.includes("CriOS") ||
-      ua.includes("Gmail") ||
-      ua.includes("Android");
-
-    setEmailLink(isGmailUser ? gmailURL : mailtoURL);
+    setEmailLink(
+      isGmail
+        ? `https://mail.google.com/mail/?view=cm&fs=1&to=${email}`
+        : `mailto:${email}`
+    );
   }, []);
 
   return (
-    <section id="contact" className="min-h-screen flex items-center justify-center px-6 py-20">
-      <div className="text-center max-w-xl">
-        
-        <motion.h2
-          initial={{ y: 20, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-5xl font-bold mb-6"
-        >
-          Let's Connect
-        </motion.h2>
+    <section id="contact" className="min-h-screen px-6 py-24 reveal">
+      <h2 className="text-4xl font-bold text-forest mb-6">contact</h2>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2, duration: 0.6 }}
-          className="text-lg text-gray-300 mb-8"
-        >
-          Always happy to chat about quant, trading, tech, or anything interesting.
-        </motion.p>
+      <p className="text-gray-800 mb-6 max-w-xl">
+        Always happy to chat about anything.
+      </p>
 
-        <motion.a
-          href={emailLink}
+      <a
+        href={emailLink}
+        className="border border-forest text-forest px-6 py-3 rounded hover:bg-forest hover:text-white transition inline-block"
+      >
+        email me
+      </a>
+
+      <div className="flex flex-col gap-2 mt-8 text-base">
+        <a
+          href="https://github.com/eyt44"
           target="_blank"
-          rel="noopener noreferrer"
-          className="px-7 py-3 bg-primary text-black font-semibold rounded-md shadow hover:bg-primary/80 transition inline-block"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.98 }}
+          className="relative text-gray-800 lowercase group w-fit"
         >
-          Email Me
-        </motion.a>
+          github ↗
+          <span className="absolute left-0 -bottom-0.5 h-[1px] w-0 bg-forest transition-all group-hover:w-full"></span>
+        </a>
 
-        <div className="flex gap-8 text-lg mt-6 justify-center">
-          <a
-            href="https://github.com/eyt44"
-            target="_blank"
-            className="hover:text-primary transition"
-          >
-            GitHub
-          </a>
-
-          <a
-            href="https://www.linkedin.com/in/emily-t-338503318/"
-            target="_blank"
-            className="hover:text-primary transition"
-          >
-            LinkedIn
-          </a>
-        </div>
+        <a
+          href="https://www.linkedin.com/in/emily-t-338503318/"
+          target="_blank"
+          className="relative text-gray-800 lowercase group w-fit"
+        >
+          linkedin ↗
+          <span className="absolute left-0 -bottom-0.5 h-[1px] w-0 bg-forest transition-all group-hover:w-full"></span>
+        </a>
       </div>
     </section>
   );
-};
-
-export default Contact;
+}
