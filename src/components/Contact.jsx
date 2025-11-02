@@ -21,7 +21,10 @@ export default function Contact() {
 
   return (
     <section id="contact" className="min-h-screen px-6 py-24 reveal">
-      <h2 className="text-4xl font-bold text-forest mb-6">contact</h2>
+      <h2 className="text-3xl font-semibold mb-4 flex items-center gap-2">
+        contact
+        <a href="#hero" className="text-forest hover:underline underline-offset-4 text-lg">↑</a>
+      </h2>
 
       <p className="text-gray-800 mb-6 max-w-xl">
         Always happy to chat about anything.

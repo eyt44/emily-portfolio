@@ -5,7 +5,10 @@ export default function Projects() {
 
   return (
     <section id="projects" className="min-h-screen px-6 py-24 reveal">
-      <h2 className="text-4xl font-bold text-forest mb-10">projects</h2>
+      <h2 className="text-3xl font-semibold mb-4 flex items-center gap-2">
+        projects
+        <a href="#hero" className="text-forest hover:underline underline-offset-4 text-lg">↑</a>
+      </h2>
 
       <div className="space-y-8">
 

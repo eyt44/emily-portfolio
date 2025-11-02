@@ -5,7 +5,10 @@ export default function About() {
 
   return (
     <section id="about" className="min-h-screen px-6 py-24 reveal">
-      <h2 className="text-4xl font-bold text-forest mb-6">about</h2>
+      <h2 className="text-3xl font-semibold mb-4 flex items-center gap-2">
+        about
+        <a href="#hero" className="text-forest hover:underline underline-offset-4 text-lg">↑</a>
+      </h2>
 
       <p className="text-gray-800 max-w-3xl leading-relaxed">
         I'm a first-year at Yale studying mathematics and computer science and their 
