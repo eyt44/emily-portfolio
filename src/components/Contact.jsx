@@ -37,25 +37,27 @@ export default function Contact() {
         email me
       </a>
 
-      <div className="flex flex-col gap-2 mt-8 text-base">
-        <a
-          href="https://github.com/eyt44"
+      {/* Social Links */}
+      <div className="flex gap-6 text-sm justify-center mt-6 text-forest">
+
+        <a 
+          href="https://github.com/eyt44" 
           target="_blank"
-          className="relative text-gray-800 lowercase group w-fit"
+          className="link-underline hover:opacity-70"
         >
           github ↗
-          <span className="absolute left-0 -bottom-0.5 h-[1px] w-0 bg-forest transition-all group-hover:w-full"></span>
         </a>
 
-        <a
-          href="https://www.linkedin.com/in/emily-t-338503318/"
+        <a 
+          href="https://www.linkedin.com/in/emily-t-338503318/" 
           target="_blank"
-          className="relative text-gray-800 lowercase group w-fit"
+          className="link-underline hover:opacity-70"
         >
           linkedin ↗
-          <span className="absolute left-0 -bottom-0.5 h-[1px] w-0 bg-forest transition-all group-hover:w-full"></span>
         </a>
+
       </div>
+
     </section>
   );
 }
